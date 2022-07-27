@@ -1,0 +1,12 @@
+*** Sentencia para obetener el producto con mayor stock ***
+
+select * from products where stock =
+(SELECT MAX (stock)
+FROM products);
+
+*** Sentencia para obtener el producto más vendido, y adicional se ordena de mayor a menor los productos vendidos ***
+
+SELECT id_product, COUNT( id_product ) AS id_product
+FROM  sales
+GROUP BY id_product
+ORDER BY id_product desc;
